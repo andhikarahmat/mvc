@@ -77,5 +77,23 @@ public class model_siswa implements controller_siswa {
             Baru(siswa);
         }
     }
+
+    @Override
+    public void Hapus(form_siswa siswa) throws SQLException {
+        try {
+            Connection con = koneksi.getcon();
+            String sql = "DELETE FROM siswa WHERE NIS =?";
+            PreparedStatement prepare = con.prepareStatement(sql);
+            prepare.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Data berhasil dihapus");
+            prepare.close();
+        } catch (Exception e) {
+            System.out.println("e");
+        } finally {
+            Simpan (siswa);
+            siswa.setLebarKolom();
+            Baru(siswa);
+        }
+    }
 }
     
