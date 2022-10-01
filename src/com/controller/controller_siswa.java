@@ -13,4 +13,6 @@ public interface controller_siswa {
     public void Baru (form_siswa siswa) throws SQLException;
     public void Ubah (form_siswa siswa) throws SQLException;
     public void Hapus (form_siswa siswa) throws SQLException;
+     public void tampil (form_siswa siswa) throws SQLException;
+     public void kliktable (form_siswa siswa) throws SQLException;
 }
